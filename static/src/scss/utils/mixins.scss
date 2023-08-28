@@ -1,0 +1,112 @@
+@function rem($pixels, $context: $main-font-size) {
+    @if (unitless($pixels)) {
+        $pixels: $pixels * 1px;
+    }
+    @if (unitless($context)) {
+        $context: $context * 1px;
+    }
+    @return calc($pixels / $context) * 1rem;
+}
+@function em($pixels, $context: $main-font-size) {
+    @if (unitless($pixels)) {
+        $pixels: $pixels * 1px;
+    }
+    @if (unitless($context)) {
+        $context: $context * 1px;
+    }
+    @return calc($pixels / $context) * 1em;
+}
+
+@mixin r($width) {
+    @media only screen and (max-width: $width + "px"){
+        @content;
+    }
+}
+@mixin rmin($width) {
+    @media only screen and (min-width: $width + "px"){
+        @content;
+    }
+}
+@mixin rIn($width, $width2) {
+    @media (min-width: $width + "px") and (max-width: $width2 + "px"){
+        @content;
+    }
+}
+
+@mixin aspect-ratio($w, $h, $pseudo: false) {
+
+    $padding: unquote(calc($h / $w) * 100 + '%');
+    // position: relative;
+
+    @if $pseudo {
+        &::before {
+            content: "";
+            display: block;
+            width: 100%;
+            padding-top: $padding;
+        }
+    }
+
+    @else {
+        padding-top: $padding;
+    }
+
+    @supports (aspect-ratio: 1 / 1) {
+        aspect-ratio: unquote("#{$w} / #{$h}");
+
+        @if $pseudo {
+            &::before {
+                padding-top: initial;
+                display: initial;
+                width: initial;
+            }
+        }
+
+        @else {
+            padding-top: initial;
+        }
+    }
+
+}
+
+@mixin css-lock($min-size: 1, $max-size: 1.4, $min-width: 20, $max-width: 100, $property: font-size, $unit: px) {
+    #{$property}: #{$max-size}#{$unit};
+    #{$property}: calc(#{$min-size}#{$unit} + (#{$max-size} - #{$min-size}) * ((100vw - #{$min-width}#{$unit}) / (#{$max-width} - #{$min-width})));
+
+    @media (max-width: #{$min-width}#{$unit}) {
+        #{$property}: #{$min-size}#{$unit}
+    }
+    @media (min-width: #{$max-width}#{$unit}) {
+        #{$property}: #{$max-size}#{$unit}
+    }
+}
+
+@function vw($px-vw, $base-vw: 1440px) {
+    @return calc(calc($px-vw * 100vw) / $base-vw);
+}
+
+@function vh($height, $base-vh: 804px) {
+    @return calc(calc($height/$base-vh * 100vh) * 1);
+}
+
+%antialias {
+    font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+%reset-btn {
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}

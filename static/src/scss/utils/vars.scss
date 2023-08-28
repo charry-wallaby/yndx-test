@@ -1,0 +1,21 @@
+// Font
+$main-font: 'YS Text', sans-serif;
+$main-font-size: 24px;
+
+// Colors
+$color-primary: #FFDE40;
+$color-text: #21201F;
+$color-grey: #C5C5C5;
+$color-purple: #8241EF;
+
+:root {
+    --color-primary: #FFDE40;
+    --color-text: #21201F;
+    --color-grey: #C5C5C5;
+    --color-purple: #8241EF;
+
+    --mainFz: 24px;
+}
+
+// Transitions
+$transition-base: all 0.33s ease-in-out;

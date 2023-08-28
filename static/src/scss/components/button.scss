@@ -1,0 +1,23 @@
+.btn{
+    @extend %reset-btn;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background-color: $color-primary;
+    box-shadow: 0px 4px 98px 0px rgba($color-primary, 0.59);
+    font-size: inherit;
+    line-height: 0.71;
+    color: $color-text;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: vw(36px);
+    padding: vw(24px) vw(48px);
+    width: auto;
+    transition: $transition-base;
+    &:hover{
+        background-color: rgba($color-primary, 0.69);
+        box-shadow: 0px 4px 98px 0px rgba($color-primary, 0.9);
+    }
+}

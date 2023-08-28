@@ -1,0 +1,43 @@
+h1, h2, h3, h4, h5, p{
+    margin: 0;
+}
+
+h1,.h1{
+    font-weight: 900;
+    font-size: vw(72px);
+    line-height: 0.908;
+    letter-spacing: -1.44px;
+    margin-bottom: vh(48px);
+    @include r(991){
+        margin-bottom: 35px;
+    }
+    @include r(768) {
+        font-size: 36px;
+    }
+}
+h2,.h2{
+    font-weight: 900;
+    font-size: vw(56px);
+    line-height: 1;
+    letter-spacing: -1.12px;
+    margin-bottom: vh(48px);
+    @include r(991) {
+        margin-bottom: 32px;
+    }
+    @include r(768) {
+        font-size: 32px;
+    }
+}
+h3,.h3{
+    font-weight: 900;
+    font-size: vw(48px);
+    line-height: 1;
+    letter-spacing: -0.96px;
+    margin-bottom: vh(48px);
+    @include r(991) {
+        margin-bottom: 32px;
+    }
+    @include r(768) {
+        font-size: 32px;
+    }
+}
