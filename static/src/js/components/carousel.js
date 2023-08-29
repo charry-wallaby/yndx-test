@@ -30,14 +30,6 @@ window.addEventListener('DOMContentLoaded', () => {
         checker();
     }
 
-    // const someFunc = (instance) => {
-    //     if (instance) {
-    //         instance.on('slideChange', function (e) {
-    //             console.log('*** mySwiper.activeIndex', instance.activeIndex);
-    //         });
-    //     }
-    // };
-
     resizableSwiper(
         '(max-width: 575px) and (orientation: portrait)',
         '.access__carousel',
@@ -59,7 +51,6 @@ window.addEventListener('DOMContentLoaded', () => {
                 nextEl: '.access__carousel-nav_btn.--next',
                 prevEl: '.access__carousel-nav_btn.--prev',
             },
-        },
-        // someFunc
+        }
     );
 });

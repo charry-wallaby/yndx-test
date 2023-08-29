@@ -7,37 +7,39 @@ block content
 
     section.intro 
         .container.intro__container
-            .intro__content 
+            .intro__content(data-aos="fade-right" data-aos-duration="1200" data-aos-delay="200")
                 img.intro__logo(src="img/logos/Yandex_Go_Ru_black.svg", alt="Yandex Go")
                 h1.intro__title Вступайте #[br]в клуб #[br]Самокатов
                 p.intro__text Купите абонемент, чтобы стать #[br]частью клуба в новом сезоне-2024. #[br]8 месяцев за 
                     span.intro__price
                         | #[span.intro__price-new 499₽] #[span.intro__price-old 3190₽ ]
-                button.btn Стать частью клуба
-        .intro__decor 
-            +img('intro__decor-smkt', 'intro-smkt', 'png', 'Самокат', 'main', 824, 716)
-            +img('intro__decor-txt', 'text-circle', 'png', 'Сообщество любителей самокатов', 'main', 209, 208)
+                button.btn.intro__btn Стать частью клуба
+        .intro__decor
+            .intro__decor-wrap(data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="600")
+                +img('intro__decor-smkt', 'intro-smkt', 'png', 'Самокат', 'main', 824, 716)
+                +img('intro__decor-txt rotate-center', 'text-circle', 'png', 'Сообщество любителей самокатов', 'main', 209, 208)
 
     section.benefits 
         .container.benefits__container 
-            h2.h2.benefits__title Вот что даёт участие #[br]в клубе
+            h2.h2.benefits__title(data-aos="fade-right" data-aos-duration="1200" data-aos-delay="200")
+                | Вот что даёт участие #[br]в клубе
             .benefits__wrap 
-                .benefits__col
+                .benefits__col(data-aos="fade-right" data-aos-duration="1200" data-aos-delay="400" data-aos-offset="200")
                     .benefits__col-icon 
                         +icon('0rub', {cls: 'benefits__icon --rub', w: 83, h: 83})
                     .benefits__col-text 
                         p 0₽ за старт в каждой поездке
-                .benefits__col 
+                .benefits__col(data-aos="fade-right" data-aos-duration="1200" data-aos-delay="800" data-aos-offset="200")
                     .benefits__col-icon 
                         +icon('scooter', {cls: 'benefits__icon --scooter', w: 94, h: 83})
                     .benefits__col-text 
                         p Катаетесь с друзьями? #[br]Бронируйте до трёх самокатов #[br]с аккаунта с абонементом — #[br]так у всех будет бесплатный старт
-                .benefits__col 
+                .benefits__col(data-aos="fade-right" data-aos-duration="1200" data-aos-delay="400" data-aos-offset="200")
                     .benefits__col-icon 
                         +icon('clock', {cls: 'benefits__icon --clock', w: 83, h: 83})
                     .benefits__col-text 
                         p Бесплатная пауза 15 минут #[br]в поездке — например, чтобы #[br]зайти за кофе или передохнуть
-                .benefits__col 
+                .benefits__col(data-aos="fade-right" data-aos-duration="1200" data-aos-delay="800" data-aos-offset="200")
                     .benefits__col-icon 
                         +icon('battery', {cls: 'benefits__icon --battery', w: 83, h: 83})
                     .benefits__col-text 
@@ -45,23 +47,51 @@ block content
 
     section.access
         .container.access__container 
-            h2.h3.access__title Эксклюзивный доступ #[br]к событиям Самокатов
+            h2.h3.access__title(data-aos="fade-right" data-aos-duration="1200" data-aos-delay="200")
+                | Эксклюзивный доступ #[br]к событиям Самокатов
             .access__about 
-                .access__about-text 
+                .access__about-text(data-aos="fade-right" data-aos-duration="1200" data-aos-delay="200" data-aos-offset="300")
                     p С абонементом — у вас доступ #[br]к специальным мероприятиям, #[br]скидки и классный мерч. В 2023 году #[br]мы танцевали на Даче Плюс #[br]с Антохой MC, катались на самокатах #[br]с Сергеем Мезенцевым и слушали хор #[br]Attaque de Panique
             .swiper.access__carousel 
                 .access__carousel-decors 
-                    img.access__carousel-decor_image.--decor1(src='/img/decor/decor1.png' alt='Lines' width='365' height='364')
-                    img.access__carousel-decor_image.--decor2(src='/img/decor/decor2.png' alt='Marker' width='525' height='593')
-                    img.access__carousel-decor_image.--decor3(src='/img/decor/decor3.png' alt='Cup' width='598' height='696')
+                    img.access__carousel-decor_image.--decor1(
+                        src='/img/decor/decor1.png', 
+                        alt='Lines', 
+                        width='365', 
+                        height='364',
+                        data-aos="zoom-out-down",
+                        data-aos-duration="800",
+                        data-aos-delay="200",
+                        data-aos-offset="500"
+                    )
+                    img.access__carousel-decor_image.--decor2(
+                        src='/img/decor/decor2.png',
+                        alt='Marker',
+                        width='525',
+                        height='593',
+                        data-aos="zoom-out-right",
+                        data-aos-duration="800",
+                        data-aos-delay="200",
+                        data-aos-offset="600"
+                    )
+                    img.access__carousel-decor_image.--decor3(
+                        src='/img/decor/decor3.png',
+                        alt='Cup',
+                        width='598',
+                        height='696',
+                        data-aos="zoom-out-up",
+                        data-aos-duration="800",
+                        data-aos-delay="300",
+                        data-aos-offset="400"
+                    )
                 .swiper-wrapper.access__carousel-wrap 
-                    .swiper-slide.access__carousel-slide.--slide1 
+                    .swiper-slide.access__carousel-slide.--slide1(data-aos="fade-up" data-aos-duration="800" data-aos-delay="400" data-aos-offset="400")
                         +img('access__carousel-image', 'slide-01', 'jpeg', 'Антоха MC', 'carousel', 912, 912)
-                    .swiper-slide.access__carousel-slide.--slide2
+                    .swiper-slide.access__carousel-slide.--slide2(data-aos="fade-up" data-aos-duration="800" data-aos-delay="200" data-aos-offset="300")
                         +img('access__carousel-image', 'slide-02', 'jpeg', 'Толпа', 'carousel', 912, 912)
-                    .swiper-slide.access__carousel-slide.--slide3
+                    .swiper-slide.access__carousel-slide.--slide3(data-aos="fade-up" data-aos-duration="800" data-aos-delay="200" data-aos-offset="500")
                         +img('access__carousel-image', 'slide-03', 'jpeg', 'Девушка', 'carousel', 912, 912)
-                    .swiper-slide.access__carousel-slide.--slide4
+                    .swiper-slide.access__carousel-slide.--slide4(data-aos="fade-up" data-aos-duration="800" data-aos-delay="400" data-aos-offset="500")
                         +img('access__carousel-image', 'slide-04', 'jpeg', 'Шопер', 'carousel', 912, 912)
 
                 .access__carousel-nav 
@@ -74,17 +104,22 @@ block content
         .container.join__container 
             .join__wrap 
                 .join__col.--col1
-                    h2.h3.join__title Купить #[br]абонемент #[br]и вступить #[br]в клуб смогут #[br]те, кто в Плюсе
-                    p.join__text За каждую поездку на самокатах #[br]такие пользователи получают #[br]кешбэк баллами. Баллы можно #[br]тратить на поездки на самокатах #[br]и такси с Яндекс Go, покупки #[br]и заказы в других сервисах Яндекса
-                .join__col.--col2
+                    h2.h3.join__title(data-aos="fade-right" data-aos-duration="1200" data-aos-delay="200")
+                        | Купить #[br]абонемент #[br]и вступить #[br]в клуб смогут #[br]те, кто в Плюсе
+                    p.join__text(data-aos="fade-right" data-aos-duration="1200" data-aos-delay="200" data-aos-offset="300")
+                        | За каждую поездку на самокатах #[br]такие пользователи получают #[br]кешбэк баллами. Баллы можно #[br]тратить на поездки на самокатах #[br]и такси с Яндекс Go, покупки #[br]и заказы в других сервисах Яндекса
+                .join__col.--col2(data-aos="zoom-in" data-aos-duration="800" data-aos-delay="300" data-aos-offset="500")
                     .join__col-decors.--smkt1
                         img.join__col-decor_image.--decor1(src='/img/main/smkt-01.png' alt='Scooter' width='872' height='893')
-                        img.join__col-decor_image.--decor2(src='/img/main/plus.png' alt='Plus' width='296' height='293')
+                        img.air.join__col-decor_image.--decor2(src='/img/main/plus.png' alt='Plus' width='296' height='293')
                 .join__col.--col3
-                    .join__col-decors.--smkt2
+                    .join__col-decors.--smkt2(data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" data-aos-offset="400")
                         +img('join__col-decor_image --decor3', 'smkt-02', 'png', 'Самокат', 'main', 284, 392)
-                        +img('join__col-decor_image --decor4', 'text-circle', 'png', 'Сообщество любителей самокатов', 'main', 539, 539)
+                        +img('join__col-decor_image --decor4 rotate-center', 'text-circle', 'png', 'Сообщество любителей самокатов', 'main', 539, 539)
                 .join__col.--col4
-                    h2.h3.join__title 80% наших #[br]пользователей #[br]уже в клубе #[br]и экономят #[br]на поездках
-                    p.join__text Присоединяйтесь — опция начнёт #[br]действовать в начале сезона–2024. #[br]Об открытии сезона предупредим #[br]заранее, чтобы вы были готовы
-                    button.btn.join__btn Хочу абонемент
+                    h2.h3.join__title(data-aos="fade-left" data-aos-duration="1200" data-aos-delay="400")
+                        | 80% наших #[br]пользователей #[br]уже в клубе #[br]и экономят #[br]на поездках
+                    p.join__text(data-aos="fade-left" data-aos-duration="1200" data-aos-delay="400" data-aos-offset="100")
+                        | Присоединяйтесь — опция начнёт #[br]действовать в начале сезона–2024. #[br]Об открытии сезона предупредим #[br]заранее, чтобы вы были готовы
+                    .join__btn-wrap(data-aos="fade-left" data-aos-duration="1200" data-aos-delay="400" data-aos-offset="100") 
+                        button.btn.join__btn Хочу абонемент

@@ -21,3 +21,27 @@
 img[width]{
     height: auto;
 }
+
+.rotate-center {
+    animation: rotate-center 16s linear infinite;
+}
+
+.air{
+    animation: float 3s infinite ease-in-out alternate;
+}
+
+@keyframes rotate-center {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes float {
+    100% {
+        transform: translate(10px, 20px);
+    }
+}

@@ -31,6 +31,12 @@
             width: 100%;
             padding: em(18, 16) 0;
             box-shadow: 0px 4px 64px 0px rgba($color-primary, 0.59);
+            &.intro__btn{
+                position: fixed;
+                bottom: em(20, 16);
+                left: (32, 16);
+                max-width: calc(100vw - em(64, 16));
+            }
         }
     }
 }
