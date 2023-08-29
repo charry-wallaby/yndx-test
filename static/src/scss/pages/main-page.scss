@@ -1,8 +1,15 @@
 .intro{
     position: relative;
     height: 100vh;
-    @include rIn(768, 991){
-        height: auto;
+    @include r(575){
+        @include ot(portrait){
+            display: flex;
+            flex-flow: column wrap;
+            align-items: center;
+            justify-content: center;
+            height: auto;
+            min-height: 100vh;
+        }
     }
     &::before{
         display: block;
@@ -31,17 +38,26 @@
     &__container{
         display: flex;
         align-items: center;
+        @include r(575){
+            @include ot(portrait) {
+                height: auto;
+                align-items: flex-start;
+            }
+        }
     }
     &__content{
         position: relative;
         z-index: 2;
+        width: 100%;
     }
     &__logo{
         width: 100%;
         max-width: vw(176px);
         height: auto;
-        @include r(767){
-            max-width: em(113, 16);
+        @include r(575) {
+            @include ot(portrait) {
+                max-width: em(113, 16);
+            }
         }
     }
     &__title{
@@ -55,6 +71,7 @@
         line-height: 1.1;
         @include r(767) {
             margin-bottom: rem(15, 16);
+            font-size: 18px;
         }
     }
     &__price{
@@ -78,6 +95,9 @@
             font-weight: 500;
             line-height: 120%;
             text-decoration: line-through;
+            @include r(767){
+                font-size: 13px;
+            }
         }
     }
     &__decor{
@@ -104,6 +124,13 @@
             z-index: 1;
             width: vw(209px);
             height: auto;
+            @include r(575) {
+                @include ot(portrait) {
+                    bottom: 23%;
+                    left: 28%;
+                    width: 24%;
+                }
+            }
         }
         &::before{
             display: block;
@@ -121,6 +148,15 @@
             filter: blur(100px);
             @include aspect-ratio(658, 402, true);
         }
+        @include r(575) {
+            @include ot(portrait) {
+                position: relative;
+                top: 0;
+                right: 5.7%;
+                max-width: 94.3%;
+                transform: inherit;
+            }
+        }
     }
 }
 
@@ -130,8 +166,14 @@
         grid-template-columns: repeat(2, 1fr);
         align-items: start;
         gap: vh(61px) vw(112px);
-        @include rIn(768, 991){
+        @include rIn(576, 991){
             row-gap: vh(41px);
+        }
+        @include r(575) {
+            @include ot(portrait) {
+                grid-template-columns: 1fr;
+                gap: em(24, 16);
+            }
         }
     }
     &__col{
@@ -139,8 +181,34 @@
         justify-items: flex-start;
         grid-template-columns: 1fr;
         gap: vh(16px);
+        @include r(575) {
+            @include ot(portrait) {
+                grid-template-columns: em(83, 16) 1fr;
+                gap: 1em;
+                align-items: center;
+            }
+        }
         &-icon{
             display: flex;
+            align-items: center;
+        }
+        &-text{
+            @include r(575) {
+                @include ot(portrait) {
+                    br{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    &__title{
+        @include r(575) {
+            @include ot(portrait) {
+                br{
+                    display: none;
+                }
+            }
         }
     }
     &__icon{
@@ -148,6 +216,17 @@
         height: auto;
         &.--scooter{
             width: vw(94px);
+            @include r(575) {
+                @include ot(portrait) {
+                    width: em(83, 16);
+                }
+            }
+        }
+        @include r(575) {
+            @include ot(portrait) {
+                width: em(83, 16);
+                height: em(83, 16);
+            }
         }
     }
 }
@@ -155,103 +234,59 @@
 .access{
     &__about{
         margin-bottom: vh(70px);
-        @include rIn(768, 991){
+        @include rIn(576, 991){
             margin-bottom: vh(20px);
         }
-    }
-    &__carousel{
-        width: 100%;
-        @include rmin(768){
-            overflow: visible;
-        }
-        &-decors{
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 2;
-            pointer-events: none;
-        }
-        &-decor_image{
-            position: absolute;
-            width: 100%;
-            height: auto;
-            &.--decor1{
-                top: vw(-345px);
-                right: vw(-165px);
-                max-width: vw(365px);
-                @include rIn(768, 991){
-                    top: vw(-325px);
-                    right: vw(-145px);
-                }
-            }
-            &.--decor2{
-                top: vw(-145px);
-                left: vw(-255px);
-                max-width: vw(525px);
-            }
-            &.--decor3{
-                bottom: vw(-183px);
-                right: vw(-259px);
-                max-width: vw(598px);
-            }
-        }
-        &-wrap{
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: vw(30px);
-            @include r(767){
-                display: flex;
-                column-gap: 0;
-            }
-        }
-        &-slide{
-            display: flex;
-            @include aspect-ratio(912, 912, true);
-            @include rmin(768){
-                &.--slide1{
-                    order: 0;
-                }
-                &.--slide2{
-                    order: 1;
-                    margin-top: vw(-190px);
-                }
-                &.--slide3{
-                    order: 3;
-                    margin-top: vw(-190px);
-                }
-                &.--slide4{
-                    order: 2;
-                }
-            }
-        }
-        &-image{
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 64px;
-            @include rmin(768) {
-                transform: rotate(2deg);
+        @include r(575) {
+            @include ot(portrait) {
+                margin-bottom: 0;
             }
         }
     }
 }
 
 .join{
+    @include r(767) {
+        @include ot(portrait) {
+            overflow: hidden;
+        }
+    }
+    @include r(575) {
+        @include ot(portrait) {
+            padding-bottom: 11vmax;
+        }
+    }
     &__wrap{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: vh(128px) vw(50px);
-        @include rIn(768, 991){
+        @include rIn(576, 991){
             row-gap: vh(78px);
+        }
+        @include r(575) {
+            @include ot(portrait) {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
         }
     }
     &__col{
         position: relative;
+        @include r(575) {
+            @include ot(portrait) {
+                &.--col2{
+                    display: none;
+                }
+            }
+        }
         &-decors{
-            position: absolute;
+            position: relative;
             pointer-events: none;
+            @include rmin(576) {
+                @include ot(landscape) {
+                    position: absolute;
+                }
+            }
             &::before {
                 display: block;
                 content: '';
@@ -308,6 +343,24 @@
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
+                }
+                @include r(575) {
+                    @include ot(portrait) {
+                        width: 100%;
+                        height: auto;
+                        bottom: 0;
+                        &::before {
+                            top: 34%;
+                            left: 23%;
+                            max-width: 51.71%;
+                            opacity: 1;
+                            transform: rotate(-40.03deg);
+                            @include aspect-ratio(193, 216, true);
+                        }
+                        .--decor3 {
+                            width: 55%;
+                        }
+                    }
                 }
             }
         }

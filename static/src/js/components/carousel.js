@@ -1,12 +1,5 @@
-import Swiper, {
-    Navigation,
-    Lazy,
-	EffectFade,
-    Autoplay,
-    EffectCoverflow,
-    EffectFlip
-} from "swiper";
-Swiper.use([Navigation, EffectFade, Lazy, Autoplay, EffectCoverflow, EffectFlip]);
+import Swiper, { Navigation, EffectCreative } from "swiper";
+Swiper.use([Navigation, EffectCreative]);
 
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -37,27 +30,36 @@ window.addEventListener('DOMContentLoaded', () => {
         checker();
     }
 
-    const someFunc = (instance) => {
-        if (instance) {
-            instance.on('slideChange', function (e) {
-                console.log('*** mySwiper.activeIndex', instance.activeIndex);
-            });
-        }
-    };
+    // const someFunc = (instance) => {
+    //     if (instance) {
+    //         instance.on('slideChange', function (e) {
+    //             console.log('*** mySwiper.activeIndex', instance.activeIndex);
+    //         });
+    //     }
+    // };
 
     resizableSwiper(
-        '(max-width: 767px)',
+        '(max-width: 575px) and (orientation: portrait)',
         '.access__carousel',
         {
-        direction: "horizontal",
-        slidesPerView: 1,
-        loop: false,
-        autoHeight: true,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
+            slidesPerView: 1,
+            speed: 600,
+            effect: "creative",
+            creativeEffect: {
+                prev: {
+                    shadow: false,
+                    translate: ["-120%", 0, -500],
+                },
+                next: {
+                    shadow: false,
+                    translate: ["120%", 0, -500],
+                },
+            },
+            navigation: {
+                nextEl: '.access__carousel-nav_btn.--next',
+                prevEl: '.access__carousel-nav_btn.--prev',
+            },
         },
-        },
-        someFunc
+        // someFunc
     );
 });

@@ -32,6 +32,11 @@
         @content;
     }
 }
+@mixin ot($orientation) {
+    @media (orientation: $orientation) {
+        @content;
+    }
+}
 
 @mixin aspect-ratio($w, $h, $pseudo: false) {
 

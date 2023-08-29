@@ -1,0 +1,146 @@
+.access {
+    &__carousel {
+        width: 100%;
+        @include rmin(576) {
+            @include ot(landscape) {
+                overflow: visible;
+            }
+        }
+        @include r(575) {
+            @include ot(portrait) {
+                width: 100vw;
+                margin-left: -2rem;
+                padding-top: rem(47, 16);
+            }
+        }
+        &-decors {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+        &-decor_image {
+            position: absolute;
+            width: 100%;
+            height: auto;
+            &.--decor1 {
+                top: vw(-345px);
+                right: vw(-165px);
+                max-width: vw(365px);
+                @include rIn(576, 991) {
+                    @include ot(landscape) {
+                        top: vw(-325px);
+                        right: vw(-145px);
+                    }
+                }
+                @include r(575) {
+                    @include ot(portrait) {
+                        top: -5%;
+                        right: -7%;
+                        max-width: em(170, 16);
+                    }
+                }
+            }
+            &.--decor2 {
+                top: vw(-145px);
+                left: vw(-255px);
+                max-width: vw(525px);
+                @include r(575) {
+                    @include ot(portrait) {
+                        display: none;
+                        visibility: hidden;
+                    }
+                }
+            }
+            &.--decor3 {
+                bottom: vw(-183px);
+                right: vw(-259px);
+                max-width: vw(598px);
+                @include r(575) {
+                    @include ot(portrait) {
+                        display: none;
+                        visibility: hidden;
+                    }
+                }
+            }
+        }
+        &-wrap {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: vw(30px);
+            @include r(575) {
+                @include ot(portrait) {
+                    display: flex;
+                    column-gap: 0;
+                }
+            }
+        }
+        &-slide {
+            display: flex;
+            @include rmin(576) {
+                @include ot(landscape) {
+                    @include aspect-ratio(912, 912, true);
+                    &.--slide1 {
+                        order: 0;
+                    }
+                    &.--slide2 {
+                        order: 1;
+                        margin-top: vw(-190px);
+                    }
+                    &.--slide3 {
+                        order: 3;
+                        margin-top: vw(-190px);
+                    }
+                    &.--slide4 {
+                        order: 2;
+                    }
+                }
+            }
+            @include r(575) {
+                @include ot(portrait) {
+                    align-items: flex-start;
+                    height: fit-content;
+                    padding: 0 1rem;
+                }
+            }
+        }
+        &-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 64px;
+            @include rmin(768) {
+                @include ot(landscape) {
+                    transform: rotate(2deg);
+                }
+            }
+        }
+        &-nav{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: em(12, 16);
+            margin-top: em(20, 16);
+            @include rmin(576) {
+                @include ot(landscape) {
+                    display: none;
+                }
+            }
+            &_btn{
+                display: flex;
+                align-items: flex-start;
+                transition: all .3s ease-in-out;
+                &:active{
+                    transform: scale(0.8);
+                }
+                &.swiper-button-disabled{
+                    opacity: .5;
+                    pointer-events: none;
+                }
+            }
+        }
+    }
+}

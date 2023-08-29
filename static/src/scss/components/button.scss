@@ -20,4 +20,17 @@
         background-color: rgba($color-primary, 0.69);
         box-shadow: 0px 4px 98px 0px rgba($color-primary, 0.9);
     }
+    &:active {
+        transform: scale(0.95);
+    }
+    @include r(767) {
+        font-size: 18px;
+        border-radius: em(36, 16);
+        padding: em(18, 16) em(48, 16);
+        @include ot(portrait) {
+            width: 100%;
+            padding: em(18, 16) 0;
+            box-shadow: 0px 4px 64px 0px rgba($color-primary, 0.59);
+        }
+    }
 }

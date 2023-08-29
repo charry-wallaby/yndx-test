@@ -64,21 +64,27 @@ block content
                     .swiper-slide.access__carousel-slide.--slide4
                         +img('access__carousel-image', 'slide-04', 'jpeg', 'Шопер', 'carousel', 912, 912)
 
+                .access__carousel-nav 
+                    .access__carousel-nav_btn.--prev
+                        +icon('arrow-left', {cls: '.access__carousel-nav_icon', w: 48, h: 48})
+                    .access__carousel-nav_btn.--next
+                        +icon('arrow-right', {cls: '.access__carousel-nav_icon', w: 48, h: 48})
+
     section.join 
         .container.join__container 
             .join__wrap 
-                .join__col 
+                .join__col.--col1
                     h2.h3.join__title Купить #[br]абонемент #[br]и вступить #[br]в клуб смогут #[br]те, кто в Плюсе
                     p.join__text За каждую поездку на самокатах #[br]такие пользователи получают #[br]кешбэк баллами. Баллы можно #[br]тратить на поездки на самокатах #[br]и такси с Яндекс Go, покупки #[br]и заказы в других сервисах Яндекса
-                .join__col
+                .join__col.--col2
                     .join__col-decors.--smkt1
                         img.join__col-decor_image.--decor1(src='/img/main/smkt-01.png' alt='Scooter' width='872' height='893')
                         img.join__col-decor_image.--decor2(src='/img/main/plus.png' alt='Plus' width='296' height='293')
-                .join__col
+                .join__col.--col3
                     .join__col-decors.--smkt2
                         +img('join__col-decor_image --decor3', 'smkt-02', 'png', 'Самокат', 'main', 284, 392)
                         +img('join__col-decor_image --decor4', 'text-circle', 'png', 'Сообщество любителей самокатов', 'main', 539, 539)
-                .join__col
+                .join__col.--col4
                     h2.h3.join__title 80% наших #[br]пользователей #[br]уже в клубе #[br]и экономят #[br]на поездках
                     p.join__text Присоединяйтесь — опция начнёт #[br]действовать в начале сезона–2024. #[br]Об открытии сезона предупредим #[br]заранее, чтобы вы были готовы
                     button.btn.join__btn Хочу абонемент
