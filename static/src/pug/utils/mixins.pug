@@ -9,6 +9,6 @@ mixin icon(name, options)
 
 mixin img(className, name, ext, alt, folder, w, h)
     picture
-        source(media="(orientation: landscape)", srcset=`/img/${folder}/${name}@2x.${ext}`)
-        source(media="(orientation: portrait)", srcset=`/img/${folder}/${name}.${ext}`)
-        img(class=`${className}` src=`/img/${folder}/${name}.${ext}` alt=`${alt}` width=`${w}` height=`${h}`)
+        source(media="(orientation: landscape)", srcset=`img/${folder}/${name}@2x.${ext}`)
+        source(media="(orientation: portrait)", srcset=`img/${folder}/${name}.${ext}`)
+        img(class=`${className}` src=`img/${folder}/${name}.${ext}` alt=`${alt}` width=`${w}` height=`${h}`)
