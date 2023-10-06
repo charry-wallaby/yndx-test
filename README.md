@@ -1,28 +1,11 @@
-# README #
+# Описание #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+[Ссылка на макет](https://www.figma.com/file/W9gacDyHMIG55KuDwAN2Tl/go-scooter-pass?type=design&node-id=0-1&mode=design&t=SlK7s4dswY7axgnR-0)
 
-### What is this repository for? ###
+[Публичная ссылка на сайт](https://yndx-test.netlify.app/)
 
-* Quick summary
-* Version
+## Запуск сайта локально ##
 
-### How do I get set up? ###
-
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+1. Перейти в папку `static`.
+2. Установить зависимости `npm install`.
+3. Запустить сайт локально `npm run dev`.
